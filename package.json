@@ -1,0 +1,9 @@
+{
+  "name": "le-camion-d-ugo",
+  "version": "0.1.0",
+  "main": "gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-compile-handlebars": "~0.8.0"
+  }
+}
