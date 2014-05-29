@@ -8,22 +8,25 @@ body{
   color: #fff;
 }
 
-.pizzas{
-    font-family: chalk;
-}
-
 .fixed-header{
-    height: 60px;   
+    height: 60px;
+    color: inherit;
     background: inherit;
 }
 
-.fixed-header .tel a, .fixed-header .info p{
+.tel a{
     color: inherit;
     text-decoration: inherit;
 }
 
+
+.fixed-header .info p:first-child{
+    margin-top: 10px;    
+}
+
 .fixed-header .info p{
-    font-size: 24px;
+    font-size: 16px;
+    line-height: 16px;
 }
 
 .fixed-header .tel a{
@@ -43,7 +46,7 @@ h1{
 	  -o-background-size: cover;
 	  background-size: cover;;
     min-height: 600px;
-    margin-top: 10px;
+    margin-top: 60px;
     padding-top:60px;
     text-align:center;
 }
@@ -52,9 +55,53 @@ h1{
 	margin-bottom:25px;
 }
 
+#headerwrap p {
+	font-size: 18px;
+}
+
 #headerwrap .container {
    margin-bottom:40px;
 }
+
+.pizzas{
+    font-family: chalk;
+    color: #fff;
+}
+
+.pizzas-classiques span.name, .pizzas-classiques h3{
+    color: #F7FAC3;   
+}
+
+.pizzas-speciales span.name, .pizzas-speciales h3{
+    color: #DFC4D1;   
+}
+
+.pizzas-blanches span.name, .pizzas-blanches h3{
+    color: #AFD1B8;   
+}
+
+.pizzas-pitchounes span.name, .pizzas-pitchounes h3{
+    color: #A4CDE3;   
+}
+
+.pizzas-sucrees span.name, .pizzas-sucrees h3{
+    color: #FBB6A7;   
+}
+
+.pizzas-mois span.name, .pizzas-mois h3{
+    color: white;   
+}
+
+
+.pizzas h3{
+    font-size: 64px;
+    margin-top: 40px;
+}
+
+.pizza p{
+    font-size: 22px;
+}
+
 
 #map_canvas {
     width: 100%;

@@ -1,30 +1,149 @@
 {
+    "title": "Le Camion d'Ugo",
+    "description": "Pizzas cuites au feu de bois",
+    "tel": "+33651257847",
+    "displayTel": "06 51 257 847",  
+    "address": "Rond point de Ceyreste",
+    "footer": "Livraison grautire à domicile",
+    "date": "Ouvert le soir les mardis, mercredis, samedis et dimanches",
+    
     "menu": [{
         "title": "Les classiques",
+        "type": "classiques",
         "pizzas":[
         {
             "name": "Anchois",
             "description": "(tomage, anchois, ail)",
-            "price": "8"
-        },
-         {
-            "name": "Anchois",
-            "description": "(tomage, anchois, ail)",
-            "price": "8"
-        }]
-    },
-    {
-        "title": "Les classiques",
+            "price": "8.00 €"
+        },{
+            "name": "Fromage",
+            "description": "(tomage, emmental)",
+            "price": "8.50 €"
+        },{
+            "name": "Napolitaine",
+            "description": "(tomage, anchois, emmental, câpre, ail)",
+            "price": "8.50 €"
+        },{
+            "name": "Mozzarella",
+            "description": "(tomage, mozzarella, emmental)",
+            "price": "8.50 €"
+        },{
+            "name": "Fromage et compagnie",
+            "description": "(tomage, jambon ou champignons, emmental)",
+            "price": "9.00 €"
+        },{
+            "name": "Mozzarella et compagnie",
+            "description": "(tomage, jambon ou champignons, mozzarella)",
+            "price": "9.00 €"
+        },{
+            "name": "Poivron",
+            "description": "(tomage, poivrons, emmental)",
+            "price": "9.00 €"
+        },{
+            "name": "Royale",
+            "description": "(tomage, jambon, champignons, emmental)",
+            "price": "9.50 €"
+        },{
+            "name": "Quatre Fromages",
+            "description": "(tomage, chèvre, roquefort, mozzarella, emmental)",
+            "price": "10.00 €"
+        },{
+            "name": "Seguin",
+            "description": "(tomage, chèvre, jambon, emmental)",
+            "price": "10.00 €"
+        }]      
+    },{
+        "title": "Les Spéciales",
+        "type": "speciales",
         "pizzas":[
         {
-            "name": "Anchois",
-            "description": "(tomage, anchois, ail)",
-            "price": "8"
-        },
-         {
-            "name": "Anchois",
-            "description": "(tomage, anchois, ail)",
-            "price": "8"
-        }]
+            "name": "La végétarienne",
+            "description": "(tomage, aubergine, poivrons, champignons, oignons, emmental)",
+            "price": "11.00 €"
+        },{
+            "name": "La chèvre-Miel",
+            "description": "(tomage, chèvre, oignons, emmental, miel)",
+            "price": "10.50 €"
+        },{
+            "name": "La Ugo",
+            "description": "(tomage, chèvre, oignons, emmental, miel)",
+            "price": "11.00 €"
+        },{
+            "name": "La Mexicaine",
+            "description": "(tomage, poivrons, chorizo, emmental)",
+            "price": "11.00 €"
+        },{
+            "name": "La Parmigiana",
+            "description": "(tomage, aubergines, parmesan, emmental)",
+            "price": "11.00 €"
+        },{
+            "name": "L'arménienne",
+            "description": "(tomage, viande hachée, poivrons, oignons)",
+            "price": "11.00 €"
+        },{
+            "name": "La Moussaka",
+            "description": "(tomage, viande hachée, aubergines, oignons ,emmental)",
+            "price": "11.50 €"
+        },{
+            "name": "L'Ile de beauté",
+            "description": "(tomage, figatelle, brocciu, chèvre, emmental)",
+            "price": "12.00 €"
+        }]      
+    },{
+        "title": "Les Blanches",
+        "type": "blanches",
+        "pizzas":[
+        {
+            "name": "La Reine Crème",
+            "description": "(crème fraîche, champignons, jambon, emmental)",
+            "price": "10.50 €"
+        },{
+            "name": "L'alsacienne",
+            "description": "(crème fraîche, lardons, oignons, emmental)",
+            "price": "11.00 €"
+        },{
+            "name": "La Crèmeuse",
+            "description": "(crème fraîche, mozzarella, roquefort, chèvre, emmental)",
+            "price": "11.50 €"
+        },{
+            "name": "La Savoyarde",
+            "description": "(crème fraîche, reblochon, oignons, emmental)",
+            "price": "11.00 €"
+        }]      
+    },{
+        "title": "Les Pitcounes (Pizza enfant)",
+        "type": "pitchounes",
+        "pizzas":[
+        {
+            "name": "La Bambino",
+            "description": "(tomate, emmental)",
+            "price": "5.00 €"
+        },{
+            "name": "La Garnement",
+            "description": "(tomate, mozzarella, jambon)",
+            "price": "6.00 €"
+        }]      
+    },{
+        "title": "Les Sucrées",
+        "type": "sucrees",
+        "pizzas":[
+        {
+            "name": "Nutella",
+            "description": "",
+            "price": "5.00 €"
+        },{
+            "name": "Nutella Bananaes",
+            "description": "",
+            "price": "6.00 €"
+        }]      
+    },{
+        "title": "Pizza du Mois",
+        "type": "mois",
+        "pizzas":[
+        {
+            "name": "Pizza du mois",
+            "description": "",
+            "price": "12.00 €"
+        }]      
     }]
 }
