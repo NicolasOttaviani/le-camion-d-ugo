@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "chalk";
+    src: url('../font/Amandine.ttf');
+}
+
+body{
+  background: url(../images/slate.jpg) repeat;
+  color: #fff;
+  font-family: chalk;
+}
+
+
+#headerwrap {
+    width: 100%;
+    background: url(../images/ceyreste.jpg) no-repeat center center fixed; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;;
+    min-height: 600px;
+    margin-top: -60px;
+    padding-top:60px;
+    text-align:center;
+}
+
+#headerwrap h1 {
+	font-weight:400;
+	font-size:80px;
+	margin-bottom:25px;
+}
+
+#map_canvas {
+    width: 500px;
+    height: 400px;
+    background-color: #CCC;
+}

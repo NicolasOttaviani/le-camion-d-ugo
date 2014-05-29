@@ -1,31 +1,105 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>The HTML5 Herald</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
-<body>
-
-<div class="site-masthead">
-  <div class="container">
-        TODO
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3 col-sm-offset-1 site-sidebar">
-        menu TODO
-    </div>
-    <div class="col-sm-8 site-main">
-        liste des pizzas TODO
-    </div>
-  </div>
-</div>
-
-</body>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>The HTML5 Herald</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="resources/css/page.css?v=1">
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script>
+          function initialize() {
+                var map_canvas = document.getElementById('map_canvas');
+                var map_options = {
+                  center: new google.maps.LatLng(44.5403, -78.5463),
+                  zoom: 8,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(map_canvas, map_options)
+              }
+              google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </head>
+    
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <!--<a class="logo" href="#">RESTAURANT</a>-->
+                    <div class="social-container">
+                        <a title="test" data-placement="top" data-toggle="tooltip" data-original-title="Google Plus"
+                        class="s-icon-gplus" href="#"></a>
+                        <a class="s-icon-skype" href="#"></a>
+                        <a class="s-icon-stumbleupon" href="#"></a>
+                        <a class="s-icon-addthis" href="#"></a>
+                        <a class="s-icon-appstore" href="#"></a>
+                        <a class="s-icon-deviantart" href="#"></a>
+                        <a class="s-icon-digg" href="#"></a>
+                        <a class="s-icon-facebook" href="#"></a>
+                        <a class="s-icon-twitter" href="#"></a>
+                        <a class="s-icon-youtube" href="#"></a>
+                        <a class="s-icon-vimeo" href="#"></a>
+                        <a class="s-icon-wp" href="#"></a>
+                        <a class="s-icon-rss" href="#"></a>
+                        <a class="s-icon-pinterest" href="#"></a>
+                    </div>
+                    <div class="nav-collapse pull-left collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#welcomewrap">Delivery</a>
+                            </li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li>
+                                <a href="#menus">menus</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div id="headerwrap">
+            <header class="clearfix">
+                <div class="container">
+                    <img src="resources/images/logo.png">
+                    <hgroup>
+                        <h1>Les pizzas qu'il vous faut</h1>
+                    </hgroup>
+                </div>
+            </header>
+        </div>
+        <div class="container">
+            {{#each menu}}
+            <div class="category">
+                <h3>{{title}}</h2>
+                {{#each pizzas}}
+                <div class="pizza">
+                    <p>
+                        <span class="name">{{name}}</span>
+                        <span class="description">{{description}}</span>
+                        <span class="price">{{price}}</span>
+                    </p>
+                </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+        <div id="map_canvas"></div>
+    </body>
 </html>
