@@ -13,80 +13,54 @@
         <script>
           function initialize() {
                 var map_canvas = document.getElementById('map_canvas');
+                var myLatlng = new google.maps.LatLng(43.209236, 5.628851);
                 var map_options = {
-                  center: new google.maps.LatLng(44.5403, -78.5463),
-                  zoom: 8,
+                  center: myLatlng,
+                  zoom: 15,
                   mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-                var map = new google.maps.Map(map_canvas, map_options)
-              }
-              google.maps.event.addDomListener(window, 'load', initialize);
+                };
+                var map = new google.maps.Map(map_canvas, map_options);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: 'Le camion d\'Ugo'
+                });
+          }
+          google.maps.event.addDomListener(window, 'load', initialize);
         </script>
     </head>
     
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <!--<a class="logo" href="#">RESTAURANT</a>-->
-                    <div class="social-container">
-                        <a title="test" data-placement="top" data-toggle="tooltip" data-original-title="Google Plus"
-                        class="s-icon-gplus" href="#"></a>
-                        <a class="s-icon-skype" href="#"></a>
-                        <a class="s-icon-stumbleupon" href="#"></a>
-                        <a class="s-icon-addthis" href="#"></a>
-                        <a class="s-icon-appstore" href="#"></a>
-                        <a class="s-icon-deviantart" href="#"></a>
-                        <a class="s-icon-digg" href="#"></a>
-                        <a class="s-icon-facebook" href="#"></a>
-                        <a class="s-icon-twitter" href="#"></a>
-                        <a class="s-icon-youtube" href="#"></a>
-                        <a class="s-icon-vimeo" href="#"></a>
-                        <a class="s-icon-wp" href="#"></a>
-                        <a class="s-icon-rss" href="#"></a>
-                        <a class="s-icon-pinterest" href="#"></a>
+        <div class="fixed-header navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="tel col-md-6">
+                        <a href="callto:+33651257847">06 51 257 847</a>
                     </div>
-                    <div class="nav-collapse pull-left collapse">
-                        <ul class="nav">
-                            <li>
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <a href="#welcomewrap">Delivery</a>
-                            </li>
-                            <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li>
-                                <a href="#menus">menus</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
+                    <div class="address col-md-6">
+                        <p class="pull-right">Rond point de Ceyreste</p>
+                        <p class="pull-right">Ouvert le soir les mardis, mercredis, samedis et dimanches</p>
                     </div>
-                    <!--/.nav-collapse -->
                 </div>
             </div>
         </div>
         <div id="headerwrap">
             <header class="clearfix">
                 <div class="container">
+                    <h1>Le camion d'Ugo</h1>
                     <img src="resources/images/logo.png">
                     <hgroup>
-                        <h1>Les pizzas qu'il vous faut</h1>
+                        <h2>Rond point de Ceyreste</h2>
+                        <h2>Pizzas cuites au feu de bois</h2>
+                        <p>Ouvert le soir les mardis, mercredis, samedis et dimanches</p>
                     </hgroup>
+                    <p>Livraison grautire à domicile</p>
                 </div>
             </header>
         </div>
         <div class="container">
             {{#each menu}}
-            <div class="category">
+            <div class="pizzas">
                 <h3>{{title}}</h2>
                 {{#each pizzas}}
                 <div class="pizza">

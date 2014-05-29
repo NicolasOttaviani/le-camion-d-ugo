@@ -18,14 +18,37 @@ module.exports = function(grunt) {
             expand: true, 
         }
     },
-    clean: ['dist']
+    clean: ['dist'],
+    connect: {
+      server: {
+        options: {
+          port: 9000,
+          livereload: 35729,
+          hostname: 'localhost'
+        }
+      },
+      keepalive: true
+    },
+    watch: {
+      client: {
+        files: ['src/**/*'],
+        tasks:['default'],
+        options: {
+          livereload:35729
+        }
+      }  
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-compile-handlebars');
 
   // Default task(s).
   grunt.registerTask('default', ['clean', 'copy', 'compile-handlebars:allStatic']);
+  grunt.registerTask('preview', ['connect:server','watch:client']);
+
 
 };
