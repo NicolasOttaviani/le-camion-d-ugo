@@ -79,9 +79,9 @@
                                     {{#if separator}}
                                     {{else}}
                                         {{#if shortTitle}}
-                                        <li>{{shortTitle}}</li>
+                                        <li><a href="#{{type}}">{{shortTitle}}</a></li>
                                         {{else}}
-                                        <li>{{title}}</li>
+                                        <li><a href="#{{type}}">{{title}}</a></li>
                                         {{/if}}
                                     {{/if}}
                                     {{/each}}
@@ -113,36 +113,38 @@
             </header>
         </div>
         {{#each menu}}
+        <div id ="{{type}}">
         {{#if separator}}
-        <div class="wrap wrap-{{separator}} hidden-xs">
-           <header class="clearfix">
-           </header>
-        </div>
-        {{else}}
-        <div class="container pizzas pizzas-{{type}}">
-            <h3>{{title}}</h2>
-            {{#each pizzas}}
-            <div class="pizza hidden-xs row">
-                <p class="tel col-xs-10">
-                    <span class="name">{{name}}</span>
-                    <span class="description">({{description}})</span>
-                </p>
-                <p class="tel col-xs-2">
-                    <span class="price">{{price}}</span>
-                </p>
+            <div class="wrap wrap-{{separator}} hidden-xs">
+               <header class="clearfix">
+               </header>
             </div>
-            <div class="pizza visible-xs">
-                <p>
-                    <span class="name">{{name}}</span> - <span class="price">{{price}}</span>
-                </p>
-                <p>
-                    <span class="description">{{description}}</span>
-                </p>
-                <hr />
+            {{else}}
+            <div class="container pizzas pizzas-{{type}}">
+                <h3>{{title}}</h2>
+                {{#each pizzas}}
+                <div class="pizza hidden-xs row">
+                    <p class="tel col-xs-10">
+                        <span class="name">{{name}}</span>
+                        <span class="description">({{description}})</span>
+                    </p>
+                    <p class="tel col-xs-2">
+                        <span class="price">{{price}}</span>
+                    </p>
+                </div>
+                <div class="pizza visible-xs">
+                    <p>
+                        <span class="name">{{name}}</span> - <span class="price">{{price}}</span>
+                    </p>
+                    <p>
+                        <span class="description">{{description}}</span>
+                    </p>
+                    <hr />
+                </div>
+                {{/each}}
             </div>
-            {{/each}}
+            {{/if}}
         </div>
-        {{/if}}
         {{/each}}
         <div class="wrap wrap-camion  hidden-xs">
            <header class="clearfix">

@@ -3,6 +3,10 @@
     src: url('../font/Amandine.ttf');
 }
 
+body{
+  padding-top: 65px;
+}
+
 body, .fixed-header{
   background: url(../images/slate.jpg) repeat;
   color: #fff;
@@ -27,7 +31,6 @@ div.wrap {
 .wrap-header {
     background-image: url(../images/ceyreste.jpg);
     min-height: 900px;
-    margin-top: 60px;
     padding-top:60px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: normal;
@@ -73,10 +76,11 @@ div.wrap {
     -moz-border-radius: 30px;
     border-radius: 30px;
 	color: rgba(255,255,255,1);
-    padding: 10px;
+    padding: 10px 0px 5px 20px;
     font-family: chalk;
     color: #fff;
     font-size: 24px;   
+    width: 200px;
 }
 
 .wrap-header dl dt {
@@ -88,10 +92,6 @@ div.wrap {
 
 .wrap-header dl {
     text-align: left;   
-}
-
-.fixed-header {
-    height: 60px;
 }
 
 .fixed-header, fixed-header .tel a, .footer{
@@ -113,9 +113,7 @@ div.wrap {
 
 
 
-.fixed-header .info p:first-child{
-    margin-top: 10px;    
-}
+
 
 .fixed-header .info p, .footer .info p{
     font-size: 16px;
@@ -130,6 +128,7 @@ div.wrap {
 .pizzas{
     font-family: chalk;
     color: #fff;
+    padding-top: 20px;
 }
 
 .pizzas-classiques span.name, .pizzas-classiques h3{
@@ -220,6 +219,9 @@ div.social-bar{
         min-height: 400px;
         height: 460px;  
         
+    }
+    .wrap-header dl{
+        display: none;   
     }
     
     .wrap-header hgroup{
