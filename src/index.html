@@ -3,15 +3,19 @@
     
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>{{title}}</title>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">        
         <link rel="stylesheet" href="resources/css/page.css?v=1">
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>
-          function initialize() {
+            function initialize() {
                 var map_canvas = document.getElementById('map_canvas');
                 var myLatlng = new google.maps.LatLng(43.209236, 5.628851);
                 var map_options = {
@@ -25,64 +29,113 @@
                     map: map,
                     title: '{{title}}'
                 });
-          }
-          google.maps.event.addDomListener(window, 'load', initialize);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+            
+            $(document).ready(function(){                
+                 $("a[href^='#']").on('click', function(e) {
+                    // prevent default anchor click behavior
+                    e.preventDefault();
+                    var hash = this.hash;
+                    // animate
+                    $('html, body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 900, function(){
+                        // when done, add hash to url
+                        // (default click behaviour)
+                        window.location.hash = hash;
+                    });
+                });
+            });
         </script>
     </head>
     
     <body>
-        <div class="fixed-header navbar navbar-fixed-top">
+        <div id="top" />
+        <div class="fixed-header navbar navbar-fixed-top hidden-xs">
             <div class="container">
                 <div class="row">
-                    <div class="tel col-md-6">
+                    <div class="tel col-xs-5">
                         <a href="callto:{{tel}}">{{displayTel}}</a>
                     </div>
-                    <div class="info col-md-6">
-                        <p class="pull-right">{{address}}</p>
-                        <p class="pull-right">{{date}}</p>
+                    <div class="info col-xs-7">
+                        <p><a href="#map_canvas">{{address}}</a></p>
+                        <p>{{date}}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="wrap wrap-header">
+        <div class="fixed-header navbar navbar-fixed-top visible-xs">
+            <div class="tel">
+                <a href="callto:{{tel}}">{{displayTel}}</a>
+            </div>
+        </div>
+        
+        <div class="mobile-header visible-xs">
+            <div class="container">
+                <h1>{{title}}</h1>
+                <div class="info">
+                    <p><a href="#map_canvas">{{address}}</a></p>
+                    <p>{{date}}</p>
+                    <p>{{tips}}</p>
+                </div>
+                <div class="social-bar">
+                    <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
+                    <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrap wrap-header hidden-xs">
             <header class="clearfix">
                 <div class="container">
                     <h1>{{title}}</h1>
                     <img src="resources/images/logo.png">
                     <hgroup>
-                        <h2>{{address}}</h2>
-                        <h2>{{description}}</h2>
+                        <h2>{{subtitle}}</h2>
+                        <h3>{{description}}</h3> 
                         <p>{{date}}</p>
+                        <p>{{tips}}</p>
+                        
+                        <div class="social-bar">
+                            <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
+                            <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
+                        </div>
                     </hgroup>
-                    <p>{{footer}}</p>
-                    <p class="tel"><a href="callto:{{tel}}">{{displayTel}}</a></p>
                 </div>
             </header>
         </div>
         {{#each menu}}
         {{#if separator}}
-        <div class="wrap wrap-{{separator}}">
+        <div class="wrap wrap-{{separator}} hidden-xs">
            <header class="clearfix">
            </header>
         </div>
         {{else}}
-        <div class="pizzas pizzas-{{type}}">
-            <div class="container">
-                <h3>{{title}}</h2>
-                {{#each pizzas}}
-                <div class="pizza">
-                    <p>
-                        <span class="name">{{name}}</span>
-                        <span class="description">{{description}}</span>
-                        <span class="price pull-right">{{price}}</span>
-                    </p>
-                </div>
-                {{/each}}
+        <div class="container pizzas pizzas-{{type}}">
+            <h3>{{title}}</h2>
+            {{#each pizzas}}
+            <div class="pizza hidden-xs">
+                <p>
+                    <span class="name">{{name}}</span>
+                    <span class="description">({{description}})</span>
+                    <span class="price pull-right">{{price}}</span>
+                </p>
             </div>
+            <div class="pizza visible-xs">
+                <p>
+                    <span class="name">{{name}}</span> - <span class="price">{{price}}</span>
+                </p>
+                <p>
+                    <span class="description">{{description}}</span>
+                </p>
+                <hr />
+            </div>
+            {{/each}}
         </div>
         {{/if}}
         {{/each}}
-        <div class="wrap wrap-camion">
+        <div class="wrap wrap-camion  hidden-xs">
            <header class="clearfix">
            </header>
         </div>
@@ -91,11 +144,15 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <p>{{title}}</p>
+                <div class="col-xs-5 social-bar">
+                    
+                        <a href="#top">{{title}}</a>
+                        <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
+                        <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
+
                 </div>
-                <div class="col-md-6">
-                    <p class="pull-right">{{description}}</p>
+                <div class="col-xs-7 info">
+                    <p>{{description}}</p>
                 </div>
             </div>
         </div>

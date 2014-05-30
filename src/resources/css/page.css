@@ -3,12 +3,15 @@
     src: url('../font/Amandine.ttf');
 }
 
-body{
+body, .fixed-header{
   background: url(../images/slate.jpg) repeat;
   color: #fff;
 }
 
-
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
 
 div.wrap {
     width: 100%;
@@ -23,15 +26,26 @@ div.wrap {
 }
 .wrap-header {
     background-image: url(../images/ceyreste.jpg);
-    min-height: 600px;
+    min-height: 900px;
     margin-top: 60px;
     padding-top:60px;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
 }
 
 
 .wrap-header h2 {
-	margin-bottom:25px;
+	margin-bottom:35px;
+    font-size: 80px;
 }
+
+.wrap-header h1{
+    display: none;   
+}
+
 
 .wrap-header p {
 	font-size: 18px;
@@ -41,18 +55,29 @@ div.wrap {
    margin-bottom:40px;
 }
 
-.fixed-header{
-    height: 60px;
-    background: inherit;
+.wrap-header div.social-bar, .mobile-header div.social-bar{
+    width: 100px;
+    margin: auto;
 }
 
-.fixed-header, .fixed-header .tel a, .footer{
+.fixed-header {
+    height: 60px;
+}
+
+.fixed-header, .mobile-header, .fixed-header .tel a, .footer{
     color: #ddd;
+}
+
+.mobile-header{
+    margin-top: 100px;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: normal;
 }
 
 .wrap-pizza{
     background-image: url(../images/pizza.jpg) ;
-    min-height: 400px;
+    min-height: 500px;
 }
 
 .wrap-camion {
@@ -62,32 +87,22 @@ div.wrap {
     padding-top:60px;
 }
 
-.tel a{
-    text-decoration: inherit;
-    color: inherit;
-}
+
 
 
 .fixed-header .info p:first-child{
     margin-top: 10px;    
 }
 
-.fixed-header .info p{
+.fixed-header .info p, .footer .info p{
     font-size: 16px;
     line-height: 16px;
+    text-align: right;
 }
 
 .fixed-header .tel a{
     font-size: 36px;
 }
-
-h1{
-    display: none;   
-}
-
-
-
-
 
 .pizzas{
     font-family: chalk;
@@ -137,4 +152,36 @@ h1{
 
 .footer{
     margin-top: 4px;
+}
+
+
+a i.fa-social {
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    font-size: 25px;
+    text-align: center;
+    display: block;
+    margin-left: 10px;
+    padding-top: 9px;
+    font-size: 12px;
+    line-height: 0.45em;
+    vertical-align: -15%;    
+}
+
+a i.fa-facebook{
+    background: #3b5998;
+}
+
+a i.fa-google-plus{
+    background: #dd4b39;
+}
+
+div.social-bar a {
+    float:left;
+}
+
+div.social-bar{
+    margin: auto;
 }
