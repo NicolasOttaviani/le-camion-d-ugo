@@ -43,8 +43,11 @@ div.wrap {
 
 .fixed-header{
     height: 60px;
-    color: inherit;
     background: inherit;
+}
+
+.fixed-header, .fixed-header .tel a, .footer{
+    color: #ddd;
 }
 
 .wrap-pizza{
@@ -60,8 +63,8 @@ div.wrap {
 }
 
 .tel a{
-    color: inherit;
     text-decoration: inherit;
+    color: inherit;
 }
 
 
