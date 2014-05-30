@@ -3,8 +3,7 @@
     
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>{{title}}</title>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">        
@@ -52,50 +51,31 @@
     </head>
     
     <body>
-        <div id="top" />
-        <div class="fixed-header navbar navbar-fixed-top hidden-xs">
+        <div class="fixed-header navbar navbar-fixed-top ">
             <div class="container">
                 <div class="row">
-                    <div class="tel col-xs-5">
+                    <div class="tel col-sm-5 col-xs-12">
                         <a href="tel:{{tel}}">{{displayTel}}</a>
                     </div>
-                    <div class="info col-xs-7">
+                    <div class="info col-sm-7 hidden-xs">
                         <p><a href="#map_canvas">{{address}}</a></p>
                         <p>{{date}}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="fixed-header navbar navbar-fixed-top visible-xs">
-            <div class="tel">
-                <a href="callto:{{tel}}">{{displayTel}}</a>
-            </div>
-        </div>
         
-        <div class="mobile-header visible-xs">
-            <div class="container">
-                <h1>{{title}}</h1>
-                <div class="info">
-                    <p><a href="#map_canvas">{{address}}</a></p>
-                    <p>{{date}}</p>
-                    <p>{{tips}}</p>
-                </div>
-                <div class="social-bar">
-                    <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
-                    <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
-                </div>
-            </div>
-        </div>
         
-        <div class="wrap wrap-header hidden-xs">
+        <div id="top" class="wrap wrap-header">
             <header class="clearfix">
                 <div class="container">
                     <h1>{{title}}</h1>
-                    <img src="resources/images/logo.png">
+                    <img class="hidden-xs" src="resources/images/logo.png">
                     <hgroup>
                         <h2>{{subtitle}}</h2>
                         <h3>{{description}}</h3> 
                         <p>{{date}}</p>
+                        <p><a href="#map_canvas">{{address}}</a></p>
                         <p>{{tips}}</p>
                         
                         <div class="social-bar">

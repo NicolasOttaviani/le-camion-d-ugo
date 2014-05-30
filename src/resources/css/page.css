@@ -36,6 +36,24 @@ div.wrap {
     line-height: 40px;
 }
 
+@media (max-width: 767px){
+    .wrap-header {
+        background: inherit!important;
+        min-height: 400px;
+        height: 400px;  
+        text-transform: none;
+    }
+    
+    .wrap-header h1{
+        display: inherit!important; 
+        font-size: 64px
+    }
+    
+    .wrap-header h2{
+        display: none;
+    }
+}
+
 
 .wrap-header h2 {
 	margin-bottom:35px;
@@ -55,7 +73,7 @@ div.wrap {
    margin-bottom:40px;
 }
 
-.wrap-header div.social-bar, .mobile-header div.social-bar{
+.wrap-header div.social-bar{
     width: 100px;
     margin: auto;
 }
@@ -64,15 +82,8 @@ div.wrap {
     height: 60px;
 }
 
-.fixed-header, .mobile-header, .fixed-header .tel a, .footer{
+.fixed-header, fixed-header .tel a, .footer{
     color: #ddd;
-}
-
-.mobile-header{
-    margin-top: 100px;
-    text-align: center;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: normal;
 }
 
 .wrap-pizza{
