@@ -56,6 +56,8 @@
             "price": "10.00 €"
         }]      
     },{
+        "separator": "pizza"
+    },{
         "title": "Les Spéciales",
         "type": "speciales",
         "pizzas":[
@@ -93,6 +95,8 @@
             "price": "12.00 €"
         }]      
     },{
+        "separator": "pizza"
+    },{
         "title": "Les Blanches",
         "type": "blanches",
         "pizzas":[
@@ -129,7 +133,9 @@
             "name": "La Garnement",
             "description": "tomate, mozzarella, jambon",
             "price": "6.00 €"
-        }]      
+        }] 
+    },{
+        "separator": "pizza"
     },{
         "title": "Les Sucrées",
         "type": "sucrees",
@@ -143,6 +149,8 @@
             "description": "",
             "price": "6.00 €"
         }]      
+    },{
+        "separator": "pizza"
     },{
         "title": "Pizza du Mois",
         "type": "mois",

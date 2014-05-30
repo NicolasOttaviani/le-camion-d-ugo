@@ -4,7 +4,7 @@
 }
 
 body{
-  padding-top: 65px;
+  padding-top: 50px;
 }
 
 body, .fixed-header{
@@ -15,6 +15,21 @@ body, .fixed-header{
 a{
     text-decoration: inherit;
     color: inherit;
+}
+
+
+.fixed-header, fixed-header .tel a, .footer{
+    color: #ddd;
+}
+
+.fixed-header .info p, .footer .info p{
+    font-size: 16px;
+    line-height: 16px;
+    text-align: right;
+}
+
+.fixed-header .tel a{
+    font-size: 36px;
 }
 
 div.wrap {
@@ -28,10 +43,12 @@ div.wrap {
     background-position: center center;
     text-align: center;
 }
+
+
 .wrap-header {
     background-image: url(../images/ceyreste.jpg);
-    min-height: 900px;
-    padding-top:60px;
+    min-height: 930px;
+    padding-top: 160px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: normal;
     height: 40px;
@@ -39,7 +56,18 @@ div.wrap {
 }
 
 .wrap-header hgroup{
-     text-transform: uppercase;   
+    text-transform: uppercase;   
+    background-color: rgba(255, 0, 0, 0.5); 
+    padding-bottom: 60px;
+}
+
+.wrap-header h1{
+    background-image: url(../images/logo.png);
+    display: block;
+    height: 440px;
+    width: 500px;
+    margin: auto;
+    font-size: 0px;
 }
 
 .wrap-header p.address{
@@ -47,60 +75,46 @@ div.wrap {
 }
 
 .wrap-header h2 {
-	margin-bottom:35px;
+	margin-bottom:25px;
     font-size: 80px;
 }
-
-.wrap-header h1{
-    display: none;   
-}
-
 
 .wrap-header p {
 	font-size: 18px;
 }
 
-.wrap-header .container {
-   margin-bottom:40px;
-}
 
-.wrap-header div.social-bar{
-    width: 100px;
-    margin: auto;
+.wrap-header .social-bar{
+    display: none;
 }
 
 
+.wrap-header .wood{
+    background: url(../images/wood-bg.jpg) repeat;
+    border: 1px solid #555;
+    width: 210px;
+    margin-top: 140px;
+}
 .wrap-header dl{
     background: url(../images/slate.jpg) repeat;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
 	color: rgba(255,255,255,1);
     padding: 10px 0px 5px 20px;
+    margin: 15px;
     font-family: chalk;
     color: #fff;
     font-size: 24px;   
-    width: 200px;
+    width: 180px;
+    text-align: left;
 }
 
 .wrap-header dl dt {
 	font-size: 32px;   
     text-decoration: underline;
-    
-}
-
-
-.wrap-header dl {
-    text-align: left;   
-}
-
-.fixed-header, fixed-header .tel a, .footer{
-    color: #ddd;
 }
 
 .wrap-pizza{
     background-image: url(../images/pizza.jpg) ;
-    min-height: 500px;
+    min-height: 220px;
 }
 
 .wrap-camion {
@@ -112,18 +126,6 @@ div.wrap {
 
 
 
-
-
-
-.fixed-header .info p, .footer .info p{
-    font-size: 16px;
-    line-height: 16px;
-    text-align: right;
-}
-
-.fixed-header .tel a{
-    font-size: 36px;
-}
 
 .pizzas{
     font-family: chalk;
@@ -204,21 +206,25 @@ a i.fa-google-plus{
     background: #dd4b39;
 }
 
-div.social-bar a {
+.social-bar a {
     float:left;
 }
 
-div.social-bar{
+.social-bar{
     margin: auto;
 }
 
 
 @media (max-width: 767px){
+    
+    .wrap{
+        background: none;   
+    }
     .wrap-header {
         background: inherit!important;
-        min-height: 400px;
-        height: 460px;  
-        
+        height: auto;
+        min-height: inherit;
+        padding-top: 60px;
     }
     .wrap-header dl{
         display: none;   
@@ -226,11 +232,18 @@ div.social-bar{
     
     .wrap-header hgroup{
         text-transform: none;
+        background-color: inherit;
     }
     
+     .wrap-header .wood{
+         background: none;
+         border: 0px;
+     }
+    
     .wrap-header h1{
-        display: inherit!important; 
-        font-size: 64px
+        font-size: 64px;
+        display: inline;
+        background: none;
     }
     
     .wrap-header h2{
@@ -239,6 +252,12 @@ div.social-bar{
     
     .wrap-header p.address{
         display: inherit!important;
+    }
+    
+    .wrap-header .social-bar{
+        width: 100px;
+        height: 20px;
+        margin: auto;
     }
     
     #map_canvas {

@@ -65,13 +65,17 @@
             </div>
         </div>
         
-        
-        <div id="top" class="wrap wrap-header">
-            <header class="clearfix">
-                <div class="container">
+        <section id="top" >
+            <div class="wrap wrap-header">
+                <header class="clearfix">
                     <div class="row">
-                        <div class="col-sm-3">
-                            <dl>
+                        <div class="col-md-3 hidden-sm"> </div>
+                        <div class="col-md-6 col-sm-12">
+                           <h1>{{title}}</h1>
+                        </div>
+                        <div class="col-md-3 hidden-sm">
+                            <div class="wood">
+                             <dl>
                                 <dt>Nos pizzas</dt>
                                 <dd>
                                     <ul class="list-unstyled">
@@ -88,30 +92,25 @@
                                     </ul>
                                 </dd>
                             </dl>
-                            
-                        </div>
-                        <div class="col-sm-6">
-                            <h1>{{title}}</h1>
-                            <img class="hidden-xs" src="resources/images/logo.png">
-                            <hgroup>
-                                <h2>{{subtitle}}</h2>
-                                <h3>{{description}}</h3> 
-                                <p>{{date}}</p>
-                                <p class="address"><a href="#map_canvas">{{address}}</a></p>
-                                <p>{{tips}}</p>
-
-                                <div class="social-bar">
-                                    <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
-                                    <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
-                                </div>
-                            </hgroup>
-                        </div>
-                        <div class="col-sm-offset-3">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </header>
-        </div>
+                    <hgroup>
+
+                        <h2>{{subtitle}}</h2>
+                        <h3>{{description}}</h3> 
+                        <p>{{date}}</p>
+                        <p class="address"><a href="#map_canvas">{{address}}</a></p>
+                        <p>{{tips}}</p>
+
+                            <p class="social-bar">
+                                <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
+                                <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
+                            </p>
+                    </hgroup>
+                </header>
+            </div>
+        </section>
         {{#each menu}}
         <div id ="{{type}}">
         {{#if separator}}
