@@ -143,6 +143,10 @@ div.wrap {
     font-size: 22px;
 }
 
+.pizza.hidden-xs span.price{
+    text-align: right;   
+}
+
 
 #map_canvas {
     width: 100%;

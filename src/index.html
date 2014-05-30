@@ -116,11 +116,13 @@
         <div class="container pizzas pizzas-{{type}}">
             <h3>{{title}}</h2>
             {{#each pizzas}}
-            <div class="pizza hidden-xs">
-                <p>
+            <div class="pizza hidden-xs row">
+                <p class="tel col-xs-10">
                     <span class="name">{{name}}</span>
                     <span class="description">({{description}})</span>
-                    <span class="price pull-right">{{price}}</span>
+                </p>
+                <p class="tel col-xs-2">
+                    <span class="price">{{price}}</span>
                 </p>
             </div>
             <div class="pizza visible-xs">
