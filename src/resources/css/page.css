@@ -36,24 +36,9 @@ div.wrap {
     line-height: 40px;
 }
 
-@media (max-width: 767px){
-    .wrap-header {
-        background: inherit!important;
-        min-height: 400px;
-        height: 400px;  
-        text-transform: none;
-    }
-    
-    .wrap-header h1{
-        display: inherit!important; 
-        font-size: 64px
-    }
-    
-    .wrap-header h2{
-        display: none;
-    }
+.wrap-header p.address{
+    display: none;
 }
-
 
 .wrap-header h2 {
 	margin-bottom:35px;
@@ -199,4 +184,31 @@ div.social-bar a {
 
 div.social-bar{
     margin: auto;
+}
+
+
+@media (max-width: 767px){
+    .wrap-header {
+        background: inherit!important;
+        min-height: 400px;
+        height: 460px;  
+        text-transform: none;
+    }
+    
+    .wrap-header h1{
+        display: inherit!important; 
+        font-size: 64px
+    }
+    
+    .wrap-header h2{
+        display: none;
+    }
+    
+    .wrap-header p.address{
+        display: inherit!important;
+    }
+    
+    #map_canvas {
+        height: 400px;
+    }
 }
