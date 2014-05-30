@@ -117,7 +117,8 @@
     },{
         "separator": "pizza"
     },{
-        "title": "Les Pitcounes (Pizza enfant)",
+        "title": "Les Pitchounes (Pizza enfant)",
+        "shortTitle": "Les Pitchounes",
         "type": "pitchounes",
         "pizzas":[
         {
@@ -153,3 +154,4 @@
         }]      
     }]
 }
+
