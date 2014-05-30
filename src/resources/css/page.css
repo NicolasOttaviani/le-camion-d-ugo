@@ -8,6 +8,38 @@ body{
   color: #fff;
 }
 
+
+
+div.wrap {
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: : no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    text-align: center;
+}
+.wrap-header {
+    background-image: url(../images/ceyreste.jpg);
+    min-height: 600px;
+    margin-top: 60px;
+    padding-top:60px;
+}
+
+.wrap-pizza{
+    background: url(../images/pizza.jpg) no-repeat center center fixed;
+    min-height: 400px;
+}
+
+.wrap-camion {
+    background: url(../images/camion-d-ugo.jpg) no-repeat center center fixed; 
+    min-height: 800px;
+    margin-top: 60px;
+    padding-top:60px;
+}
+
 .fixed-header{
     height: 60px;
     color: inherit;
@@ -38,18 +70,6 @@ h1{
 }
 
 
-#headerwrap {
-    width: 100%;
-    background: url(../images/ceyreste.jpg) no-repeat center center fixed; 
-	  -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;;
-    min-height: 600px;
-    margin-top: 60px;
-    padding-top:60px;
-    text-align:center;
-}
 
 #headerwrap h2 {
 	margin-bottom:25px;

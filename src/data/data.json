@@ -110,6 +110,9 @@
             "description": "(crème fraîche, reblochon, oignons, emmental)",
             "price": "11.00 €"
         }]      
+    
+    },{
+        "separator": "pizza"
     },{
         "title": "Les Pitcounes (Pizza enfant)",
         "type": "pitchounes",

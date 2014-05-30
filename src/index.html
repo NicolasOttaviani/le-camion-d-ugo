@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div id="headerwrap">
+        <div class="wrap wrap-header">
             <header class="clearfix">
                 <div class="container">
                     <h1>{{title}}</h1>
@@ -59,9 +59,15 @@
                 </div>
             </header>
         </div>
-        <div class="container">
-            {{#each menu}}
-            <div class="pizzas pizzas-{{type}}">
+        {{#each menu}}
+        {{#if separator}}
+        <div class="wrap wrap-{{separator}}">
+           <header class="clearfix">
+           </header>
+        </div>
+        {{else}}
+        <div class="pizzas pizzas-{{type}}">
+            <div class="container">
                 <h3>{{title}}</h2>
                 {{#each pizzas}}
                 <div class="pizza">
@@ -73,7 +79,12 @@
                 </div>
                 {{/each}}
             </div>
-            {{/each}}
+        </div>
+        {{/if}}
+        {{/each}}
+        <div class="wrap wrap-camion">
+           <header class="clearfix">
+           </header>
         </div>
         <div id="map_canvas"></div>
     </body>
