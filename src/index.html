@@ -21,7 +21,8 @@
                 var map_options = {
                   center: myLatlng,
                   zoom: 15,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                  mapTypeId: google.maps.MapTypeId.ROADMAP,
+                  scrollwheel: false 
                 };
                 var map = new google.maps.Map(map_canvas, map_options);
                 var marker = new google.maps.Marker({
