@@ -53,14 +53,14 @@
             };
 
             var pUp = function (node, event){
-                var prevSectionId = $(node).parents('section').prev('*[id]').attr('id');
+                var prevSectionId = $(node).parents('section').prevAll('*[id]:first').attr('id');
                 event.preventDefault();
                 go('#'+prevSectionId);
 
             };
 
             var pDown = function (node, event){
-                var prevSectionId = $(node).parents('section').next('*[id]').attr('id');
+                var prevSectionId = $(node).parents('section').nextAll('*[id]:first').attr('id');
                 event.preventDefault();
                 go('#'+prevSectionId);
             };
@@ -186,7 +186,7 @@
             </div>
         </section>
         {{/each}}
-          <section id="camion">
+          <section>
             <div class="wrap wrap-camion  hidden-xs">
                 <header class="clearfix">
                 </header>
