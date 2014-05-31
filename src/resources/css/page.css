@@ -10,7 +10,7 @@ body{
     color: #fff;
 }
 
-.fixed-header{
+.fixed-header, .footer{
    background: url(../images/slate.jpg) repeat; 
    font-family: 'Open Sans Condensed', sans-serif; 
 }
@@ -34,6 +34,10 @@ a:hover{
     font-size: 16px;
     line-height: 16px;
     text-align: right;
+}
+
+.fixed-header .info p, .footer .info p:first-child{
+    margin-top: 8px;
 }
 
 .fixed-header .tel a{
@@ -65,7 +69,7 @@ div.wrap {
 .wrap-header hgroup{
     text-transform: uppercase;  
     font-family: 'Open Sans Condensed', sans-serif;
-    background-color: rgba(255, 0, 0, 0.5); 
+/*    background-color: rgba(255, 0, 0, 0.5); */
     padding-bottom: 60px;
 }
 
@@ -99,6 +103,7 @@ div.wrap {
 #top .separator{
     padding-top: 10px;
     height: 80px;
+    border-top: 2px solid rgba(255, 0, 0, 0.5); 
 }
 
 .separator h3{
@@ -130,7 +135,7 @@ div.wrap {
 
 .wrap-pizza{
     background-image: url(../images/pizza.jpg) ;
-    min-height: 220px;
+    min-height: 200px;
     border-bottom: 2px solid rgba(255, 0, 0, 0.5); 
     border-top: 2px solid rgba(255, 0, 0, 0.5); 
 }

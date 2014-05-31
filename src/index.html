@@ -52,16 +52,16 @@
                 });
             };
 
-            var pUp = function (node){
+            var pUp = function (node, event){
                 var prevSectionId = $(node).parents('section').prev('*[id]').attr('id');
+                event.preventDefault();
                 go('#'+prevSectionId);
 
             };
 
-            var pDown = function (node){
+            var pDown = function (node, event){
                 var prevSectionId = $(node).parents('section').next('*[id]').attr('id');
-                                console.log(prevSectionId);
-
+                event.preventDefault();
                 go('#'+prevSectionId);
             };
         </script>
@@ -138,10 +138,10 @@
                         </div>
                         <div class="col-xs-2 pagination">
                             <div class="pagination-arrow">
-                                <a href="#" onclick="pUp(this)"><i class="fa fa-chevron-circle-up fa-4x"></i></a>
+                                <a href="#" onclick="pUp(this, event)"><i class="fa fa-chevron-circle-up fa-4x"></i></a>
                             </div>
                             <div class="pagination-arrow">
-                                <a href="#" onclick="pDown(this)"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
+                                <a href="#" onclick="pDown(this, event)"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
                             </div>
                         </div>    
                     </div>
