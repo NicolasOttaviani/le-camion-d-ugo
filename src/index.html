@@ -80,14 +80,11 @@
                                 <dd>
                                     <ul class="list-unstyled">
                                     {{#each menu}}
-                                    {{#if separator}}
-                                    {{else}}
                                         {{#if shortTitle}}
                                         <li><a href="#{{type}}">{{shortTitle}}</a></li>
                                         {{else}}
                                         <li><a href="#{{type}}">{{title}}</a></li>
                                         {{/if}}
-                                    {{/if}}
                                     {{/each}}
                                     </ul>
                                 </dd>
@@ -95,33 +92,32 @@
                             </div>
                         </div>
                     </div>
-                    <hgroup>
-
-                        <h2>{{subtitle}}</h2>
-                        <h3>{{description}}</h3> 
-                        <p>{{date}}</p>
-                        <p class="address"><a href="#map_canvas">{{address}}</a></p>
-                        <p>{{tips}}</p>
-
-                            <p class="social-bar">
-                                <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
-                                <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
-                            </p>
-                    </hgroup>
                 </header>
+                <hgroup>
+
+                    <h2>{{subtitle}}</h2>
+                    <h3>{{description}}</h3> 
+                    <p>{{date}}</p>
+                    <p class="address"><a href="#map_canvas">{{address}}</a></p>
+                    <p>{{tips}}</p>
+
+                        <p class="social-bar">
+                            <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
+                            <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
+                        </p>
+                </hgroup>
             </div>
+            <div class="separator" ></div>
         </section>
         {{#each menu}}
-        <div id ="{{type}}">
-        {{#if separator}}
-            <div class="wrap wrap-{{separator}} hidden-xs">
-               <header class="clearfix">
-               </header>
+        <section id ="{{type}}">
+            <div class="wrap wrap-pizza hidden-xs">
+               <header class="clearfix"></header>
             </div>
-            {{else}}
             <div class="container pizzas pizzas-{{type}}">
-                <h3>{{title}}</h2>
+                <h3>{{title}}</h3>
                 {{#each pizzas}}
+                <div>
                 <div class="pizza hidden-xs row">
                     <p class="tel col-xs-10">
                         <span class="name">{{name}}</span>
@@ -140,31 +136,27 @@
                     </p>
                     <hr />
                 </div>
+                    </div>
                 {{/each}}
             </div>
-            {{/if}}
-        </div>
+        </section>
         {{/each}}
-        <div class="wrap wrap-camion  hidden-xs">
-           <header class="clearfix">
-           </header>
-        </div>
         <div id="map_canvas"></div>
-    </body>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-5 social-bar">
-                    
-                        <a href="#top">{{title}}</a>
-                        <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
-                        <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-5 social-bar">
 
-                </div>
-                <div class="col-xs-7 info">
-                    <p>{{description}}</p>
+                            <a href="#top">{{title}}</a>
+                            <a href="{{facebook}}"><i class="fa fa-social fa-facebook"></i></a>
+                            <a href="{{google}}"><i class="fa fa-social fa-google-plus"></i></a>
+
+                    </div>
+                    <div class="col-xs-7 info">
+                        <p>{{description}}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </body>
 </html>

@@ -88,6 +88,11 @@ div.wrap {
     display: none;
 }
 
+#top .separator{
+    height: 60px;
+}
+
+
 
 .wrap-header .wood{
     background: url(../images/wood-bg.jpg) repeat;
