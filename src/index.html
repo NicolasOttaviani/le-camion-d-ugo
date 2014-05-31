@@ -43,14 +43,15 @@
             });
             
             var go = function  (hash){
-                console.log($(window).scrollTop());
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 1100, function(){
-                    // when done, add hash to url
-                    // (default click behaviour)
-                    window.location.hash = hash;
-                });
+                if (hash !== window.location.hash = hash){
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1100, function(){
+                        // when done, add hash to url
+                        // (default click behaviour)
+                        window.location.hash = hash;
+                    });
+                }
             };
 
             var pUp = function (node, event){
