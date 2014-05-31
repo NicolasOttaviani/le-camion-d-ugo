@@ -13,7 +13,11 @@
         <![endif]-->
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+       
         <script>
+            var scrollOffset = 140;
+            
+            
             function initialize() {
                 var map_canvas = document.getElementById('map_canvas');
                 var myLatlng = new google.maps.LatLng(43.209236, 5.628851);
@@ -33,15 +37,20 @@
             google.maps.event.addDomListener(window, 'load', initialize);
             
             $(document).ready(function(){                
+                $body = $(document.body);
+                $allPizzaSections = $body.find("section.section-pizza")
+                
                 $("a[href^='#']").on('click', function(e) {
                     // prevent default anchor click behavior
                     e.preventDefault();
                     // animate
                     go (this.hash);
-                });                
+                });
+               
+                $(window).on ('scroll', dipslayActivePizzaSection);
                
             });
-            
+        
             var go = function  (hash){
                 if (hash !== window.location.hash){
                     $('html, body').animate({
@@ -66,6 +75,30 @@
                 event.preventDefault();
                 go('#'+prevSectionId);
             };
+            var $allPizzaSections = null;
+            var $currentPizzaSection = null;
+            var $$body = null;
+            var dipslayActivePizzaSection = function (){
+                var windowHeigt = $body.height();
+                console.log(windowHeigt);
+                var $target = $allPizzaSections
+                  .map(function () {
+                    return  $(this);
+                  })
+                  .sort(function (a, b) { return b.offset().top - a.offset().top })
+                $target = $.grep ($target, function (n){
+                  return n.offset().top < document.body.scrollTop + scrollOffset;
+                })[0];
+                
+                if ($target === $currentPizzaSection){
+                    return;   
+                }
+                
+                $allPizzaSections.find ('.pagination').hide();
+                $target.find ('.pagination').show();
+                $currentPizzaSection = $target;
+                
+            }
         </script>
         <style>
             
@@ -140,7 +173,7 @@
             </div>
         </section>
         {{#each menu}}
-        <section id ="{{type}}">
+        <section id ="{{type}}" class="section-pizza">
             <div class="wrap wrap-pizza wrap-{{type}} hidden-xs">
                 <header class="clearfix">
                     <div class="container">
