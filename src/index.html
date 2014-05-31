@@ -65,6 +65,15 @@
                 go('#'+prevSectionId);
             };
         </script>
+        <style>
+            
+            {{#each menu}}
+            .wrap-pizza.wrap-{{type}}{
+                background-image: url(resources/images/{{type}}.jpg) ;
+            }
+            {{/each}}
+            
+        </style>
     </head>
     
     <body>
@@ -130,7 +139,7 @@
         </section>
         {{#each menu}}
         <section id ="{{type}}">
-            <div class="wrap wrap-pizza hidden-xs">
+            <div class="wrap wrap-pizza wrap-{{type}} hidden-xs">
                 <header class="clearfix">
                     <div class="container">
                     <div class="row hidden-xs">
@@ -177,6 +186,12 @@
             </div>
         </section>
         {{/each}}
+          <section id="camion">
+            <div class="wrap wrap-camion  hidden-xs">
+                <header class="clearfix">
+                </header>
+            </div>
+        </section>
         <secion id="map">
             <div id="map_canvas"></div>
         </secion>
