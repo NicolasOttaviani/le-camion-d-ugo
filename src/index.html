@@ -43,6 +43,7 @@
             });
             
             var go = function  (hash){
+                console.log($(window).scrollTop());
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
                 }, 1100, function(){

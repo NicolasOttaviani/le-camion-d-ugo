@@ -53,6 +53,7 @@ div.wrap {
     background-repeat: : no-repeat;
     background-attachment: fixed;
     background-position: center center;
+ 
     text-align: center;
 }
 
@@ -136,7 +137,13 @@ div.wrap {
 .wrap-pizza{
     min-height: 200px;
     border-bottom: 2px solid rgba(255, 0, 0, 0.5); 
-    border-top: 2px solid rgba(255, 0, 0, 0.5); 
+    border-top: 2px solid rgba(255, 0, 0, 0.5);
+       -khtml-opacity:.50; 
+ -moz-opacity:.50; 
+ -ms-filter:"alpha(opacity=50)";
+  filter:alpha(opacity=50);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+  opacity:.50; 
 }
 
 .wrap-camion {
