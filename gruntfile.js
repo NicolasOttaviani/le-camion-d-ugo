@@ -56,9 +56,9 @@ module.exports = function(grunt) {
 
   // Default task(s).
     
-  grunt.registerTask('build', ['clean', 'copy', 'compile-handlebars']);
-  grunt.registerTask('debug', ['build', 'connect:server-debug','watch:client']);
-  grunt.registerTask('default', ['build', 'connect:server']);
+  grunt.registerTask('default', ['clean', 'copy', 'compile-handlebars']);
+  grunt.registerTask('debug', ['default', 'connect:server-debug','watch:client']);
+  grunt.registerTask('server', ['default', 'connect:server']);
 
 
 };
