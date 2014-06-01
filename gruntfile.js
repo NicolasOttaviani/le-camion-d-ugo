@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-
+  var port = process.env.PORT || 8080;
+  var ip = process.env.IP || '0.0.0.0';
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -20,11 +21,18 @@ module.exports = function(grunt) {
     },
     clean: ['dist'],
     connect: {
+      'server-debug': {
+        options: {
+          port: port,
+          livereload: 35729,
+          hostname: ip
+        }
+      },
       server: {
         options: {
-          port: 8080,
-          livereload: 35729,
-          hostname: '0.0.0.0'
+          port: port,
+          hostname: ip,
+          keepalive: true
         }
       },
       keepalive: true
@@ -47,8 +55,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-compile-handlebars');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'copy', 'compile-handlebars']);
-  grunt.registerTask('preview', ['default', 'connect:server','watch:client']);
+    
+  grunt.registerTask('build', ['clean', 'copy', 'compile-handlebars']);
+  grunt.registerTask('debug', ['build', 'connect:server-debug','watch:client']);
+  grunt.registerTask('default', ['build', 'connect:server']);
 
 
 };
