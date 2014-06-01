@@ -1,3 +1,55 @@
+
+@media (max-width: 767px){
+    
+    .wrap{
+        background: none;   
+    }
+    .wrap-header {
+        background: inherit!important;
+        height: auto;
+        min-height: inherit;
+        padding-top: 60px;
+    }
+    .wrap-header dl{
+        display: none;   
+    }
+    
+    .wrap-header hgroup{
+        text-transform: none;
+        background-color: inherit;
+    }
+    
+     .wrap-header .wood{
+         background: none;
+         border: 0px;
+     }
+    
+    .wrap-header h1{
+        font-size: 64px;
+        display: inline;
+        background: none;
+    }
+    
+    .wrap-header h2{
+        display: none;
+    }
+    
+    .wrap-header p.address{
+        display: inherit!important;
+    }
+    
+    .wrap-header .social-bar{
+        width: 100px;
+        height: 20px;
+        margin: auto;
+    }
+    
+    #map_canvas {
+        height: 400px;
+    }
+}
+
+
 @font-face {
     font-family: "chalk";
     src: url('../font/Amandine.ttf');
@@ -251,55 +303,4 @@ a i.fa-google-plus{
 
 .social-bar{
     margin: auto;
-}
-
-
-@media (max-width: 767px){
-    
-    .wrap{
-        background: none;   
-    }
-    .wrap-header {
-        background: inherit!important;
-        height: auto;
-        min-height: inherit;
-        padding-top: 60px;
-    }
-    .wrap-header dl{
-        display: none;   
-    }
-    
-    .wrap-header hgroup{
-        text-transform: none;
-        background-color: inherit;
-    }
-    
-     .wrap-header .wood{
-         background: none;
-         border: 0px;
-     }
-    
-    .wrap-header h1{
-        font-size: 64px;
-        display: inline;
-        background: none;
-    }
-    
-    .wrap-header h2{
-        display: none;
-    }
-    
-    .wrap-header p.address{
-        display: inherit!important;
-    }
-    
-    .wrap-header .social-bar{
-        width: 100px;
-        height: 20px;
-        margin: auto;
-    }
-    
-    #map_canvas {
-        height: 400px;
-    }
 }
