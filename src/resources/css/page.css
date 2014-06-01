@@ -97,10 +97,6 @@ div.wrap {
 }
 
 
-.wrap-header .social-bar{
-    display: none;
-}
-
 #top .separator{
     padding-top: 10px;
     height: 80px;
@@ -147,10 +143,16 @@ div.wrap {
 }
 
 .wrap-camion {
-    background-image: url(../images/camion-d-ugo.jpg) ; 
+    background-image: url(../images/camion-d-ugo.jpg) ;
+    border-bottom: 2px solid rgba(255, 0, 0, 0.5); 
+    border-top: 2px solid rgba(255, 0, 0, 0.5);
     min-height: 800px;
     margin-top: 60px;
     padding-top:60px;
+}
+
+.wrap-camion .pagination{
+    padding-top: 700px;
 }
 
 .pagination{
