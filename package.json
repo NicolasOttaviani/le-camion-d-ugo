@@ -1,6 +1,6 @@
 {
   "name": "le-camion-d-ugo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "gruntfile.js",
   "devDependencies": {
     "grunt": "~0.4.5",
