@@ -3,17 +3,17 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    'compile-handlebars':{
-      allStatic:{
-        template: 'src/index.html',
-        templateData: 'src/data/data.json',
-        output: 'dist/index.html'
-      }
+    'compile-handlebars':{      
+        allArray:{
+            template: ['src/index.html', 'src/resources/css/pizza.xcss', 'src/resources/js/google.map.xjs'],
+            templateData: ['src/data/data.json', 'src/data/data.json', 'src/data/data.json'],
+            output: ['dist/index.html', 'dist/resources/css/pizza.css', 'dist/resources/js/google.map.js']
+        }
     },
     copy: {
         dist: {
             cwd: 'src/',
-            src: 'resources/**',
+            src: ['resources/images/**', 'resources/font/**', 'resources/css/*.css', 'resources/js/*.js'],
             dest: 'dist/',
             expand: true, 
         }
@@ -47,8 +47,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-compile-handlebars');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'copy', 'compile-handlebars:allStatic']);
-  grunt.registerTask('preview', ['connect:server','watch:client']);
+  grunt.registerTask('default', ['clean', 'copy', 'compile-handlebars']);
+  grunt.registerTask('preview', ['default', 'connect:server','watch:client']);
 
 
 };

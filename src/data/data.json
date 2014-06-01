@@ -10,7 +10,8 @@
     "date": "Ouvert les mardis, mercredis, samedis et dimanches soir",
     "facebook": "https://fr-fr.facebook.com/lecamiondugo",
     "google": "https://plus.google.com/118114683180296373293/about",
-    
+    "gMapLat": 43.209236, 
+    "gMapLng": 5.628851,     
     "menu": [{
         "title": "Les classiques",
         "type": "classiques",
@@ -152,4 +153,3 @@
         }]      
     }]
 }
-

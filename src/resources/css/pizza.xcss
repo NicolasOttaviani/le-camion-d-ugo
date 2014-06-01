@@ -1,0 +1,5 @@
+ {{#each menu}}
+.wrap-pizza.wrap-{{type}}{
+    background-image: url(../images/{{type}}.jpg) ;
+}
+{{/each}}

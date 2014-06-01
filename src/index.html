@@ -8,92 +8,15 @@
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">        
         <link rel="stylesheet" href="resources/css/page.css?v=1">
+        <link rel="stylesheet" href="resources/css/pizza.css?v=1">
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
        
-        <script>    
-            function initialize() {
-                var map_canvas = document.getElementById('map_canvas');
-                var myLatlng = new google.maps.LatLng(43.209236, 5.628851);
-                var map_options = {
-                  center: myLatlng,
-                  zoom: 15,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP,
-                  scrollwheel: false 
-                };
-                var map = new google.maps.Map(map_canvas, map_options);
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: '{{title}}'
-                });
-            }
-            google.maps.event.addDomListener(window, 'load', initialize);
-            
-            $(document).ready(function(){                
-                $body = $(document.body);
-                $allPizzaSections = $body.find("section.section-pizza")
-                
-                $("a[href^='#']").on('click', function(e) {
-                    // prevent default anchor click behavior
-                    e.preventDefault();
-                    // animate
-                    go (this.hash);
-                });
-            });
-        
-            var go = function  (hash){
-                var offset = $(hash).offset();
-                if (!!offset){
-                    $('html, body').animate({
-                        scrollTop: offset.top
-                    }, 1100, function(){
-                        window.location.hash = hash;
-                    });
-                }
-            };
-
-            var pUp = function (node, event){
-                var $prevs = $(node).parents('section').prevAll('*[id]');
-                var scrollTop = $(document).scrollTop();
-                var prevSectionId; 
-                for (var i=0; i < $prevs.length; ++i){
-                    var offset = $($prevs.get(i)).offset();
-                    if (!!!offset){
-                        continue;
-                    }
-                    var nTop = $($prevs.get(i)).offset().top;
-                    if (nTop == scrollTop){
-                        continue;
-                    }
-                    prevSectionId = $prevs.get(i).id;
-                    break;
-                }                    
-                event.preventDefault();
-                if (prevSectionId){                
-                    go('#'+prevSectionId);    
-                }
-            };
-
-            var pDown = function (node, event){
-                var prevSectionId = $(node).parents('section').nextAll('*[id]:first').attr('id');
-                event.preventDefault();
-                go('#'+prevSectionId);
-            };
-           
-        </script>
-        <style>
-            
-            {{#each menu}}
-            .wrap-pizza.wrap-{{type}}{
-                background-image: url(resources/images/{{type}}.jpg) ;
-            }
-            {{/each}}
-            
-        </style>
+        <script src="resources/js/google.map.js"></script>
+        <script src="resources/js/pagination.js"></script>
     </head>
     
     <body>
